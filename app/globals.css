@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-urbanist: 'Urbanist', sans-serif;
+  }
+
+  body {
+    @apply bg-white text-text-primary font-urbanist;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Hide scrollbar for mobile carousel */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
+/* Container utilities matching Figma */
+.container {
+  @apply max-w-container mx-auto px-40.5;
+}

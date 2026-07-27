@@ -1,0 +1,23 @@
+{
+  "name": "Amit Sarvaya - Health & Wellness Coach",
+  "short_name": "Amit Sarvaya",
+  "description": "Transform your health with India's top health and wellness coach",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#29B6F6",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
