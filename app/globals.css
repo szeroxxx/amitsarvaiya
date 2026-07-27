@@ -34,5 +34,5 @@
 
 /* Container utilities matching Figma */
 .container {
-  @apply max-w-container mx-auto px-40.5;
+  @apply max-w-container mx-auto px-4 sm:px-8 md:px-16 lg:px-40.5;
 }

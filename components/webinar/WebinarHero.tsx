@@ -37,7 +37,7 @@ export default function WebinarHero() {
           className="relative max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl"
         >
           <iframe
-            src={WEBINAR_PAGE.hero.videoUrl}
+            src={`${WEBINAR_PAGE.hero.videoUrl}?autoplay=1&mute=1&playsinline=1`}
             title="Weight Loss Webinar Preview"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
