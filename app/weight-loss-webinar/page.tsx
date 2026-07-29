@@ -7,7 +7,7 @@ import WebinarFinalCTA from "@/components/webinar/WebinarFinalCTA";
 import Footer from "@/components/sections/Footer";
 
 export const metadata = {
-  title: "Weight Loss Webinar - Amit Sarvaya",
+  title: "Weight Loss Webinar - Amit Sarvaiya",
   description:
     "Join the free webinar to learn how to lose weight without giving up your favorite foods or spending hours in the gym.",
 };

@@ -114,7 +114,7 @@ export default function WebinarCTA() {
             <div className="relative w-full aspect-[3/4] lg:aspect-[4/5]">
               <Image
                 src={reserveSeat.coachImage}
-                alt="Amit Sarvaya - Health Coach"
+                alt="Amit Sarvaiya - Health Coach"
                 fill
                 className="object-contain object-bottom"
               />

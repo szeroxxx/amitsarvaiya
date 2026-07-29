@@ -4,7 +4,7 @@ export const WEBINAR_PAGE = {
       "Learn how to build real, lasting health without extreme diets or endless workouts",
     description:
       "Stress, tiredness, thyroid, digestion issues, high BP, diabetes… most people think these are because of weight. But the truth is, they start when our daily lifestyle goes out of balance. In this webinar, I'll show you how small lifestyle changes can bring back your health and confidence",
-    ctaText: "Join Amit Sarvaya Live In Webinar",
+    ctaText: "Join Amit Sarvaiya Live In Webinar",
     secondaryCtaText: "Get Your Seat for Free Webinar",
     videoUrl: "https://www.youtube.com/embed/sekiPgZugSM",
   },

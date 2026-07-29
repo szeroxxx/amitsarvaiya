@@ -92,7 +92,7 @@ export default function Webinar() {
             >
               <Image
                 src={WEBINAR.image}
-                alt="Amit Sarvaya coaching"
+                alt="Amit Sarvaiya coaching"
                 fill
                 className="object-contain"
                 quality={100}
@@ -134,7 +134,7 @@ export default function Webinar() {
               <div className="relative w-full sm:w-1/2 h-64 sm:h-80 md:h-96">
                 <Image
                   src={WEBINAR.image}
-                  alt="Amit Sarvaya coaching"
+                  alt="Amit Sarvaiya coaching"
                   fill
                   className="object-contain"
                   quality={100}

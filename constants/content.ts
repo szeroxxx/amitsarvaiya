@@ -213,12 +213,12 @@ export const FINAL_CTA = {
 };
 
 export const FOOTER = {
-  brand: "Amit Sarvaya",
+  brand: "Amit Sarvaiya",
   links: [
     { label: "Home", href: "/" },
     { label: "Terms and condition", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
   ],
   goToTopText: "Got To Top",
-  copyright: "© 2025 Rekhaben Amitbhai Sarvaya. All rights reserved.",
+  copyright: "© 2025 Rekhaben Amitbhai Sarvaiya. All rights reserved.",
 };

@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="text-xl md:text-brand font-semibold text-darkBg">
-            Amit Sarvaya
+            Amit Sarvaiya
           </Link>
 
           {/* Desktop Navigation */}

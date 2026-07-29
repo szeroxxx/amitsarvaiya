@@ -18,7 +18,7 @@ export const viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://amitsarvaiya.com"),
-  title: "Amit Sarvaya - India's Top Health and Wellness Coach",
+  title: "Amit Sarvaiya - India's Top Health and Wellness Coach",
   description:
     "Transform your health with India's top health and wellness coach. Join a supportive community and take charge of your health.",
   keywords: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "weight loss",
     "India",
   ],
-  authors: [{ name: "Amit Sarvaya" }],
+  authors: [{ name: "Amit Sarvaiya" }],
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.webp",
   },
   openGraph: {
-    title: "Amit Sarvaya - India's Top Health and Wellness Coach",
+    title: "Amit Sarvaiya - India's Top Health and Wellness Coach",
     description:
       "Transform your health with India's top health and wellness coach.",
     type: "website",
@@ -52,13 +52,13 @@ export const metadata: Metadata = {
         url: "/favicon.webp",
         width: 512,
         height: 512,
-        alt: "Amit Sarvaya Logo",
+        alt: "Amit Sarvaiya Logo",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "Amit Sarvaya - India's Top Health and Wellness Coach",
+    title: "Amit Sarvaiya - India's Top Health and Wellness Coach",
     description: "Transform your health with India's top health and wellness coach.",
     images: ["/favicon.webp"],
   },
