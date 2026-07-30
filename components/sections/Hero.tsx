@@ -63,13 +63,13 @@ export default function Hero() {
           >
             <Link
               href="/weight-loss-webinar"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 md:px-5 py-3 md:py-4 bg-primary text-textSecondary text-sm md:text-base font-semibold rounded-sm hover:bg-primary/90 transition-colors whitespace-nowrap"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 md:px-5 py-3 md:py-4 bg-primary text-textSecondary text-sm md:text-base font-semibold rounded-sm hover:bg-primary/90 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] whitespace-nowrap"
             >
               {HERO.primaryCta}
             </Link>
             <Link
               href="tel:+919274460030"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 md:px-6 py-3 md:py-4 bg-[#F6FBE9] text-textPrimary text-sm md:text-base font-semibold rounded-sm border border-[#B3E5FC] hover:bg-white transition-colors whitespace-nowrap"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 md:px-6 py-3 md:py-4 bg-[#F6FBE9] text-textPrimary text-sm md:text-base font-semibold rounded-sm border border-[#B3E5FC] hover:bg-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] whitespace-nowrap"
             >
               {HERO.secondaryCta}
             </Link>

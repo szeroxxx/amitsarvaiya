@@ -147,7 +147,7 @@ export const WHY_HELP = {
     "I have seen the same struggles again and again in people facing stress, thyroid issues, weight gain, skin problems, digestion issues, hypertension, diabetes, and many other lifestyle-related conditions. These are often signs that your lifestyle is out of balance. For over 12 years, I have helped more than 22,000 people across 24+ countries reset their health, energy, and confidence through simple lifestyle changes. No crash diets. No extreme workouts. Just practical steps that naturally fit into your everyday life.",
   quote:
     "Health should be easy, practical, and within reach for everyone, no matter where they are.",
-  author: "Amit Sairvaiya",
+  author: "Amit Sarvaiya",
   ctaText: "Ready to start your transformation? Let's begin",
 };
 
@@ -167,7 +167,7 @@ export const GALLERY = {
 
   ],
   communityCount: "24+",
-  communityText: "County people already join this community",
+  communityText: "Countries where people have already joined this community",
 };
 
 export const INSTAGRAM = {
@@ -219,6 +219,6 @@ export const FOOTER = {
     { label: "Terms and condition", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
   ],
-  goToTopText: "Got To Top",
-  copyright: "© 2025 Rekhaben Amitbhai Sarvaiya. All rights reserved.",
+  goToTopText: "Go To Top",
+  copyright: "© 2025 Amit Sarvaiya. All rights reserved.",
 };

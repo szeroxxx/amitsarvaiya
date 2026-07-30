@@ -85,7 +85,7 @@ export default function WhyHelp() {
           >
             <Link
               href="/weight-loss-webinar"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white text-sm sm:text-base font-semibold rounded-sm hover:bg-primary/90 transition-colors w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white text-sm sm:text-base font-semibold rounded-sm hover:bg-primary/90 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] w-full sm:w-auto"
             >
               {WHY_HELP.ctaText}
             </Link>

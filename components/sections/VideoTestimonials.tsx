@@ -72,7 +72,7 @@ function VideoCard({
           playsInline
           preload="none"
           onPlaying={() => setReady(true)}
-          className="absolute inset-0 h-full w-full object-contain"
+          className="absolute inset-0 h-full w-full object-cover"
         />
 
         {/* Subtle gradient for depth */}
@@ -238,7 +238,7 @@ export default function VideoTestimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="px-4 md:px-20 lg:px-[240px] flex flex-col items-stretch gap-2.5"
+            className="px-4 md:px-12 max-w-[960px] mx-auto flex flex-col items-stretch gap-2.5"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-sectionTitle font-bold text-textPrimary text-center">
               {VIDEO_TESTIMONIALS.title}{" "}

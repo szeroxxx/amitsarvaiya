@@ -15,7 +15,7 @@ export default function Community() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="px-4 md:px-20 lg:px-[300px] flex flex-col items-stretch gap-2.5"
+            className="px-4 md:px-12 max-w-[840px] mx-auto flex flex-col items-stretch gap-2.5"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-sectionTitle font-bold text-textPrimary text-center">
               {COMMUNITY.title}{" "}
@@ -35,7 +35,7 @@ export default function Community() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex flex-col gap-4.75 p-4.75 bg-lightBg border border-veryLightBg rounded-md"
+                className="group flex flex-col gap-4.75 p-4.75 bg-lightBg border border-veryLightBg rounded-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 {/* Image */}
                 <div className="relative w-full h-48 md:h-56 lg:h-card-img rounded-md overflow-hidden">
@@ -43,7 +43,7 @@ export default function Community() {
                     src={card.image}
                     alt={card.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                     quality={100}
                   />
                 </div>

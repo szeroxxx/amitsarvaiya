@@ -23,36 +23,16 @@ export default function Webinar() {
           }}
         >
           {/* Desktop Layout */}
-          <div className="hidden lg:block" style={{ height: "720px" }}>
+          <div className="hidden lg:flex items-center gap-8 xl:gap-14 px-8 xl:px-16 py-14 xl:py-16">
             {/* Text Container - Left Side */}
-            <div
-              className="absolute flex flex-col"
-              style={{
-                left: "152px",
-                top: "141px",
-                width: "610px",
-                paddingBottom: "30px",
-              }}
-            >
+            <div className="flex flex-col flex-1 min-w-0 max-w-[610px]">
               {/* Title */}
-              <h2 
-                className="font-bold text-textPrimary mb-[23px]"
-                style={{
-                  fontSize: "48px",
-                  lineHeight: "1.5em",
-                  width: "591px",
-                }}
-              >
+              <h2 className="font-bold text-textPrimary mb-[23px] text-4xl xl:text-[48px]" style={{ lineHeight: "1.5em" }}>
                 Join Amit Sarvaiya <span className="text-textPrimary">Live</span>
               </h2>
 
               {/* Description */}
-              <p 
-                className="text-body font-medium text-textPrimary mb-[22.5px]"
-                style={{
-                  width: "554px",
-                }}
-              >
+              <p className="text-base xl:text-body font-medium text-textPrimary mb-[22.5px]">
                 {WEBINAR.description}
               </p>
 
@@ -60,11 +40,11 @@ export default function Webinar() {
               <div className="flex flex-col gap-[7px] mb-[26px]">
                 {WEBINAR.checklist.map((item, index) => (
                   <div key={index} className="flex items-start gap-[26.39px]">
-                    <Check 
-                      className="text-accent flex-shrink-0 mt-[7px]" 
+                    <Check
+                      className="text-accent flex-shrink-0 mt-[7px]"
                       style={{ width: "17.59px", height: "18px" }}
                     />
-                    <p className="text-body font-medium text-textPrimary">
+                    <p className="text-base xl:text-body font-medium text-textPrimary">
                       {item}
                     </p>
                   </div>
@@ -74,22 +54,15 @@ export default function Webinar() {
               {/* Button */}
               <button
                 onClick={() => setModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 px-5 py-4 bg-textSecondary text-white text-base font-semibold rounded-sm hover:bg-textSecondary/90 transition-colors self-start"
+                className="inline-flex items-center justify-center gap-2 px-5 py-4 bg-textSecondary text-white text-base font-semibold rounded-sm hover:bg-textSecondary/90 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] self-start"
               >
                 {WEBINAR.ctaText}
               </button>
             </div>
 
-            {/* Coach Image - Right Side */}
-            <div 
-              className="absolute"
-              style={{
-                left: "923px",
-                top: "50px",
-                width: "600px",
-                height: "600px",
-              }}
-            >
+            {/* Images - Right Side */}
+            <div className="relative flex-1 shrink-0 max-w-[440px] xl:max-w-[500px] aspect-square">
+              {/* Coach Image */}
               <Image
                 src={WEBINAR.image}
                 alt="Amit Sarvaiya coaching"
@@ -97,27 +70,26 @@ export default function Webinar() {
                 className="object-contain"
                 quality={100}
               />
-            </div>
 
-            {/* Thumbnail Image - Bottom Right */}
-            <div 
-              className="absolute border border-primary"
-              style={{
-                left: "784px",
-                top: "372px",
-                width: "422px",
-                height: "223px",
-                borderRadius: "10px",
-                boxShadow: "4px 4px 0px 0px rgba(41, 182, 246, 0.5)",
-              }}
-            >
-              <Image
-                src={WEBINAR.thumbnail}
-                alt="Webinar preview"
-                fill
-                className="object-cover rounded-[10px]"
-                quality={100}
-              />
+              {/* Thumbnail Image - overlapping bottom-left, scales with the coach image */}
+              <div
+                className="absolute border border-primary rounded-[10px] overflow-hidden"
+                style={{
+                  left: "-12%",
+                  top: "62%",
+                  width: "68%",
+                  aspectRatio: "422 / 223",
+                  boxShadow: "4px 4px 0px 0px rgba(41, 182, 246, 0.5)",
+                }}
+              >
+                <Image
+                  src={WEBINAR.thumbnail}
+                  alt="Webinar preview"
+                  fill
+                  className="object-cover"
+                  quality={100}
+                />
+              </div>
             </div>
           </div>
 
@@ -173,7 +145,7 @@ export default function Webinar() {
             {/* Button */}
             <button
               onClick={() => setModalOpen(true)}
-              className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-textSecondary text-white text-base font-semibold rounded-sm hover:bg-textSecondary/90 transition-colors w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-textSecondary text-white text-base font-semibold rounded-sm hover:bg-textSecondary/90 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] w-full sm:w-auto"
             >
               {WEBINAR.ctaText}
             </button>
