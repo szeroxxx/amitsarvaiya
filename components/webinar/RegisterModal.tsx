@@ -42,18 +42,22 @@ export default function RegisterModal({ open, onClose, source }: RegisterModalPr
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
             transition={{ duration: 0.2 }}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="register-modal-title"
             className="relative w-full max-w-md bg-white rounded-lg shadow-2xl p-6 sm:p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <button
+              type="button"
               onClick={onClose}
               aria-label="Close"
               className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-veryLightBg transition-colors"
             >
-              <X className="w-5 h-5 text-textPrimary" />
+              <X className="w-5 h-5 text-textPrimary" aria-hidden="true" />
             </button>
 
-            <h3 className="text-2xl font-semibold text-textPrimary mb-2 pr-8">
+            <h3 id="register-modal-title" className="text-2xl font-semibold text-textPrimary mb-2 pr-8">
               {WEBINAR_PAGE.reserveSeat.title}
             </h3>
             <p className="text-textSecondary mb-6">

@@ -38,8 +38,9 @@ export default function WebinarResults() {
                 <div className="relative aspect-[1/1] w-full">
                   <Image
                     src={testimonial.image}
-                    alt={"testimonial.name"}
+                    alt={testimonial.result}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover"
                   />
                 </div>

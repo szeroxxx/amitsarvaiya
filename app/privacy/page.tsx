@@ -1,14 +1,40 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { buildMetadata, getCanonicalUrl } from "@/lib/seo/metadata";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { getWebPageSchema } from "@/lib/schema/webpage";
+import { getBreadcrumbSchema } from "@/lib/schema/breadcrumb";
 
-export const metadata = {
-  title: "Privacy Policy | Amit Sarvaiya",
-  description: "Privacy Policy for Amit Sarvaiya's Health & Wellness Services",
-};
+const PAGE_PATH = "/privacy";
+const PAGE_TITLE = "Privacy Policy";
+const PAGE_DESCRIPTION =
+  "Read how Amit Sarvaiya and REKHABEN AMITBHAI SARVAIYA collect, use, and protect your personal data across the website, webinars, and WhatsApp communication.";
+
+export const metadata: Metadata = buildMetadata({
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  path: PAGE_PATH,
+});
 
 export default function PrivacyPage() {
+  const canonicalUrl = getCanonicalUrl(PAGE_PATH);
+
+  const schemaGraph = [
+    getWebPageSchema({
+      url: canonicalUrl,
+      name: PAGE_TITLE,
+      description: PAGE_DESCRIPTION,
+    }),
+    getBreadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: PAGE_TITLE, path: PAGE_PATH },
+    ]),
+  ];
+
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
+      <JsonLd graph={schemaGraph} />
       {/* Header */}
       <div className="bg-primary py-8 md:py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">

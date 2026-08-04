@@ -3,7 +3,6 @@
 import { WEBINAR } from "@/constants/content";
 import { Check } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useState } from "react";
 import RegisterModal from "@/components/webinar/RegisterModal";
 
@@ -37,22 +36,24 @@ export default function Webinar() {
               </p>
 
               {/* Checklist */}
-              <div className="flex flex-col gap-[7px] mb-[26px]">
+              <ul className="flex flex-col gap-[7px] mb-[26px] list-none">
                 {WEBINAR.checklist.map((item, index) => (
-                  <div key={index} className="flex items-start gap-[26.39px]">
+                  <li key={index} className="flex items-start gap-[26.39px]">
                     <Check
                       className="text-accent flex-shrink-0 mt-[7px]"
                       style={{ width: "17.59px", height: "18px" }}
+                      aria-hidden="true"
                     />
                     <p className="text-base xl:text-body font-medium text-textPrimary">
                       {item}
                     </p>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
 
               {/* Button */}
               <button
+                type="button"
                 onClick={() => setModalOpen(true)}
                 className="inline-flex items-center justify-center gap-2 px-5 py-4 bg-textSecondary text-white text-base font-semibold rounded-sm hover:bg-textSecondary/90 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] self-start"
               >
@@ -67,6 +68,7 @@ export default function Webinar() {
                 src={WEBINAR.image}
                 alt="Amit Sarvaiya coaching"
                 fill
+                sizes="(max-width: 1280px) 40vw, 500px"
                 className="object-contain"
                 quality={100}
               />
@@ -86,6 +88,7 @@ export default function Webinar() {
                   src={WEBINAR.thumbnail}
                   alt="Webinar preview"
                   fill
+                  sizes="(max-width: 1280px) 27vw, 340px"
                   className="object-cover"
                   quality={100}
                 />
@@ -108,6 +111,7 @@ export default function Webinar() {
                   src={WEBINAR.image}
                   alt="Amit Sarvaiya coaching"
                   fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   className="object-contain"
                   quality={100}
                 />
@@ -119,6 +123,7 @@ export default function Webinar() {
                   src={WEBINAR.thumbnail}
                   alt="Webinar preview"
                   fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   className="object-cover"
                   quality={100}
                 />
@@ -131,19 +136,20 @@ export default function Webinar() {
             </p>
 
             {/* Checklist */}
-            <div className="flex flex-col gap-3 md:gap-4">
+            <ul className="flex flex-col gap-3 md:gap-4 list-none">
               {WEBINAR.checklist.map((item, index) => (
-                <div key={index} className="flex items-start gap-3 md:gap-4">
-                  <Check className="text-accent flex-shrink-0 mt-1 w-5 h-5" />
+                <li key={index} className="flex items-start gap-3 md:gap-4">
+                  <Check className="text-accent flex-shrink-0 mt-1 w-5 h-5" aria-hidden="true" />
                   <p className="text-base sm:text-lg md:text-body font-medium text-textPrimary">
                     {item}
                   </p>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
 
             {/* Button */}
             <button
+              type="button"
               onClick={() => setModalOpen(true)}
               className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-textSecondary text-white text-base font-semibold rounded-sm hover:bg-textSecondary/90 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] w-full sm:w-auto"
             >

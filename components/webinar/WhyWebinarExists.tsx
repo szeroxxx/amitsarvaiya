@@ -26,9 +26,9 @@ export default function WhyWebinarExists() {
             <h3 className="text-xl md:text-2xl font-semibold text-textPrimary mb-6 text-center">
               {WEBINAR_PAGE.excuses.subtitle}
             </h3>
-            <div className="space-y-4">
+            <ul className="space-y-4 list-none">
               {WEBINAR_PAGE.excuses.reasons.map((reason, index) => (
-                <motion.div
+                <motion.li
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -36,15 +36,15 @@ export default function WhyWebinarExists() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-6 h-6 bg-primary/20 rounded flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 bg-primary/20 rounded flex items-center justify-center flex-shrink-0 mt-1" aria-hidden="true">
                     <span className="text-primary font-bold text-sm">✓</span>
                   </div>
                   <p className="text-base md:text-lg text-textPrimary">
                     {reason}
                   </p>
-                </motion.div>
+                </motion.li>
               ))}
-            </div>
+            </ul>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

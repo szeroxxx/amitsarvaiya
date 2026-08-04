@@ -1,14 +1,40 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { buildMetadata, getCanonicalUrl } from "@/lib/seo/metadata";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { getWebPageSchema } from "@/lib/schema/webpage";
+import { getBreadcrumbSchema } from "@/lib/schema/breadcrumb";
 
-export const metadata = {
-  title: "Terms and Conditions | Amit Sarvaiya",
-  description: "Terms and Conditions for Amit Sarvaiya's Health & Wellness Services",
-};
+const PAGE_PATH = "/terms";
+const PAGE_TITLE = "Terms and Conditions";
+const PAGE_DESCRIPTION =
+  "Terms and Conditions governing use of Amit Sarvaiya's website, webinars, community groups, and health & wellness coaching services.";
+
+export const metadata: Metadata = buildMetadata({
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  path: PAGE_PATH,
+});
 
 export default function TermsPage() {
+  const canonicalUrl = getCanonicalUrl(PAGE_PATH);
+
+  const schemaGraph = [
+    getWebPageSchema({
+      url: canonicalUrl,
+      name: PAGE_TITLE,
+      description: PAGE_DESCRIPTION,
+    }),
+    getBreadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: PAGE_TITLE, path: PAGE_PATH },
+    ]),
+  ];
+
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
+      <JsonLd graph={schemaGraph} />
       {/* Header */}
       <div className="bg-primary py-8 md:py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
@@ -38,9 +64,9 @@ export default function TermsPage() {
               <a href="https://amitsarvaiya.com" className="text-primary hover:underline">
                 https://amitsarvaiya.com
               </a>{" "}
-              ("Website"). The services provided here, including webinars, community groups, WhatsApp
+              (&ldquo;Website&rdquo;). The services provided here, including webinars, community groups, WhatsApp
               communication, and health & lifestyle guidance, are operated by{" "}
-              <strong>REKHABEN AMITBHAI SARVAIYA</strong> ("Company," "we," "our," "us").
+              <strong>REKHABEN AMITBHAI SARVAIYA</strong> (&ldquo;Company,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; &ldquo;us&rdquo;).
             </p>
             <p className="text-base md:text-lg text-textSecondary leading-relaxed">
               By accessing our website, WhatsApp number (+91 9274460030), webinars, or coaching

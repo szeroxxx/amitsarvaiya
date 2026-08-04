@@ -1,7 +1,7 @@
 "use client";
 
 import { WEBINAR_PAGE } from "@/constants/webinar-content";
-import { Check, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Check, Instagram, Youtube } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import WebinarRegisterForm from "./WebinarRegisterForm";
@@ -38,9 +38,9 @@ export default function WebinarCTA() {
               {reserveSeat.description}
             </p>
 
-            <div className="space-y-4 mb-8">
+            <ul className="space-y-4 mb-8 list-none">
               {reserveSeat.benefits.map((benefit, index) => (
-                <motion.div
+                <motion.li
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -49,12 +49,12 @@ export default function WebinarCTA() {
                   className="flex items-start gap-3"
                 >
                   <div className="w-6 h-6 bg-textPrimary rounded flex items-center justify-center flex-shrink-0 mt-1">
-                    <Check className="w-4 h-4 text-white" />
+                    <Check className="w-4 h-4 text-white" aria-hidden="true" />
                   </div>
                   <p className="text-base md:text-lg">{benefit}</p>
-                </motion.div>
+                </motion.li>
               ))}
-            </div>
+            </ul>
 
             <div className="max-w-md mb-4">
               <WebinarRegisterForm source="weight-loss-webinar" />
@@ -74,13 +74,6 @@ export default function WebinarCTA() {
             {/* Social Media Links */}
             <div className="flex items-center gap-4">
               <a
-                href="#"
-                className="w-10 h-10 bg-textPrimary/10 hover:bg-textPrimary/20 rounded-full flex items-center justify-center transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5 text-textPrimary" />
-              </a>
-              <a
                 href={reserveSeat.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -88,13 +81,6 @@ export default function WebinarCTA() {
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5 text-textPrimary" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-textPrimary/10 hover:bg-textPrimary/20 rounded-full flex items-center justify-center transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5 text-textPrimary" />
               </a>
               <a
                 href={reserveSeat.youtubeUrl}
@@ -116,6 +102,7 @@ export default function WebinarCTA() {
                 src={reserveSeat.coachImage}
                 alt="Amit Sarvaiya - Health Coach"
                 fill
+                sizes="(max-width: 1024px) 90vw, 45vw"
                 className="object-contain object-bottom"
               />
             </div>
@@ -133,6 +120,7 @@ export default function WebinarCTA() {
                   src={reserveSeat.webinarImage}
                   alt="Webinar Preview"
                   fill
+                  sizes="(max-width: 1024px) 60vw, 30vw"
                   className="object-cover"
                 />
               </div>

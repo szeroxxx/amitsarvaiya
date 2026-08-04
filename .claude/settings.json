@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node run.js \"C:\\\\\\\\Users\\\\\\\\Sagar\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\d--PROJECT-amit-sarvaiya\\\\\\\\a5a4908b-b115-4d28-89a6-28f9fc5c72cd\\\\\\\\scratchpad\\\\\\\\verify2.js\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3003 --max-time 5)",
+      "Bash(node run.js \"C:\\\\\\\\Users\\\\\\\\Sagar\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\d--PROJECT-amit-sarvaiya\\\\\\\\a5a4908b-b115-4d28-89a6-28f9fc5c72cd\\\\\\\\scratchpad\\\\\\\\laptop-check.js\")",
+      "Bash(node run.js \"C:\\\\\\\\Users\\\\\\\\Sagar\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\d--PROJECT-amit-sarvaiya\\\\\\\\a5a4908b-b115-4d28-89a6-28f9fc5c72cd\\\\\\\\scratchpad\\\\\\\\laptop-sections.js\")",
+      "Bash(node run.js \"C:\\\\\\\\Users\\\\\\\\Sagar\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\d--PROJECT-amit-sarvaiya\\\\\\\\a5a4908b-b115-4d28-89a6-28f9fc5c72cd\\\\\\\\scratchpad\\\\\\\\webinar-check.js\")",
+      "Bash(break)"
+    ]
+  }
+}

@@ -43,6 +43,7 @@ export default function Community() {
                     src={card.image}
                     alt={card.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                     quality={100}
                   />
@@ -50,9 +51,9 @@ export default function Community() {
 
                 {/* Text Container */}
                 <div className="flex flex-col items-stretch gap-1">
-                  <p className="text-lg sm:text-xl md:text-2xl lg:text-cardTitle font-semibold text-textPrimary text-center">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-cardTitle font-semibold text-textPrimary text-center">
                     {card.title}
-                  </p>
+                  </h3>
                 </div>
               </motion.div>
             ))}

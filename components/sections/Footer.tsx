@@ -20,7 +20,7 @@ export default function Footer() {
           </h3>
 
           {/* Navigation Links */}
-          <nav className="flex flex-col sm:flex-row gap-4 md:gap-[26px] items-center">
+          <nav aria-label="Footer" className="flex flex-col sm:flex-row gap-4 md:gap-[26px] items-center">
             {FOOTER.links.map((link) => (
               <Link
                 key={link.label}
@@ -34,12 +34,13 @@ export default function Footer() {
 
           {/* Go To Top Button */}
           <button
+            type="button"
             onClick={scrollToTop}
             className="flex items-center gap-2 px-[14px] py-[14px] bg-white text-primary font-medium rounded-[73px] hover:bg-very-light-blue transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] group"
             aria-label="Go to top"
           >
             <span className="text-base md:text-lg whitespace-nowrap">{FOOTER.goToTopText}</span>
-            <div className="w-[34px] h-[34px] bg-primary rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
+            <div className="w-[34px] h-[34px] bg-primary rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden" aria-hidden="true">
               <ArrowUp className="w-5 h-5 text-white transition-transform duration-200 group-hover:-translate-y-0.5" />
             </div>
           </button>

@@ -13,12 +13,14 @@ export default function Navbar() {
   const isScrolled = useScrollAnimation();
 
   return (
-    <nav
-      className={cn(
-        "sticky top-0 z-50 w-full bg-primary border-b border-[#EEF8D3] transition-shadow duration-300",
-        isScrolled && "shadow-md"
-      )}
-    >
+    <header>
+      <nav
+        aria-label="Primary"
+        className={cn(
+          "sticky top-0 z-50 w-full bg-primary border-b border-[#EEF8D3] transition-shadow duration-300",
+          isScrolled && "shadow-md"
+        )}
+      >
       <div className="px-4 sm:px-8 md:px-16 lg:px-40.5 py-4 md:py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -52,9 +54,11 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden text-darkBg relative w-6 h-6"
             aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
           >
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
@@ -65,7 +69,7 @@ export default function Navbar() {
                 transition={{ duration: 0.15 }}
                 className="absolute inset-0 flex items-center justify-center"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
               </motion.span>
             </AnimatePresence>
           </button>
@@ -104,6 +108,7 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </div>
-    </nav>
+      </nav>
+    </header>
   );
 }

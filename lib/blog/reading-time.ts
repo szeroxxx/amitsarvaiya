@@ -1,0 +1,7 @@
+const WORDS_PER_MINUTE = 200;
+
+/** Estimates reading time in whole minutes (minimum 1) from plain-text/markdown content. */
+export function getReadingTime(content: string): number {
+  const wordCount = content.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE));
+}

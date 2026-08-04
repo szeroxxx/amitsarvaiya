@@ -37,9 +37,18 @@ export default function WebinarRegisterForm({ source }: { source: string }) {
     }
   }
 
+  const nameId = `webinar-name-${source}`;
+  const phoneId = `webinar-phone-${source}`;
+  const ageId = `webinar-age-${source}`;
+  const genderId = `webinar-gender-${source}`;
+
   return (
     <form onSubmit={handleSubmit} className="space-y-3 w-full">
+      <label htmlFor={nameId} className="sr-only">
+        {reserveSeat.namePlaceholder}
+      </label>
       <input
+        id={nameId}
         type="text"
         required
         value={name}
@@ -47,7 +56,11 @@ export default function WebinarRegisterForm({ source }: { source: string }) {
         placeholder={reserveSeat.namePlaceholder}
         className="w-full px-4 py-3.5 rounded-sm text-textPrimary placeholder:text-textPrimary/50 border-2 border-border focus:border-textPrimary focus:outline-none"
       />
+      <label htmlFor={phoneId} className="sr-only">
+        {reserveSeat.phonePlaceholder}
+      </label>
       <input
+        id={phoneId}
         type="tel"
         required
         value={phone}
@@ -56,36 +69,48 @@ export default function WebinarRegisterForm({ source }: { source: string }) {
         className="w-full px-4 py-3.5 rounded-sm text-textPrimary placeholder:text-textPrimary/50 border-2 border-border focus:border-textPrimary focus:outline-none"
       />
       <div className="flex gap-3">
-        <select
-          required
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-          className="w-1/2 px-4 py-3.5 rounded-sm text-textPrimary border-2 border-border focus:border-textPrimary focus:outline-none"
-        >
-          <option value="" disabled>
+        <div className="w-1/2">
+          <label htmlFor={ageId} className="sr-only">
             {reserveSeat.ageLabel}
-          </option>
-          {reserveSeat.ageOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
+          </label>
+          <select
+            id={ageId}
+            required
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            className="w-full px-4 py-3.5 rounded-sm text-textPrimary border-2 border-border focus:border-textPrimary focus:outline-none"
+          >
+            <option value="" disabled>
+              {reserveSeat.ageLabel}
             </option>
-          ))}
-        </select>
-        <select
-          required
-          value={gender}
-          onChange={(e) => setGender(e.target.value)}
-          className="w-1/2 px-4 py-3.5 rounded-sm text-textPrimary border-2 border-border focus:border-textPrimary focus:outline-none"
-        >
-          <option value="" disabled>
+            {reserveSeat.ageOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="w-1/2">
+          <label htmlFor={genderId} className="sr-only">
             {reserveSeat.genderLabel}
-          </option>
-          {reserveSeat.genderOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
+          </label>
+          <select
+            id={genderId}
+            required
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+            className="w-full px-4 py-3.5 rounded-sm text-textPrimary border-2 border-border focus:border-textPrimary focus:outline-none"
+          >
+            <option value="" disabled>
+              {reserveSeat.genderLabel}
             </option>
-          ))}
-        </select>
+            {reserveSeat.genderOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       <Button
         type="submit"

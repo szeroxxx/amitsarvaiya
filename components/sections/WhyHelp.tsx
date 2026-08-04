@@ -33,14 +33,15 @@ export default function WhyHelp() {
             className="w-full grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"
           >
             {WHY_HELP.images.map((image, index) => (
-              <div 
+              <div
                 key={index}
                 className="relative w-full aspect-[277/398] rounded-lg overflow-hidden"
               >
                 <Image
                   src={image}
-                  alt={`Why help ${index + 1}`}
+                  alt={WHY_HELP.imageAlts[index]}
                   fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover"
                   quality={100}
                 />

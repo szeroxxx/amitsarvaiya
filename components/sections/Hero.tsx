@@ -14,6 +14,7 @@ export default function Hero() {
           src="/community-card-1.png"
           alt="Community gathering"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
           quality={100}

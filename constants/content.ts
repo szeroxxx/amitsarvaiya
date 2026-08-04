@@ -143,6 +143,12 @@ export const WHY_HELP = {
     "/solution-3.webp",
     "/solution-4.webp",
   ],
+  imageAlts: [
+    "Amit Sarvaiya with a community member at a wellness event",
+    "Amit Sarvaiya high-fiving attendees at a health coaching event",
+    "Amit Sarvaiya speaking with community members at a coaching session",
+    "Amit Sarvaiya enjoying an active, healthy lifestyle outdoors",
+  ],
   mainText:
     "I have seen the same struggles again and again in people facing stress, thyroid issues, weight gain, skin problems, digestion issues, hypertension, diabetes, and many other lifestyle-related conditions. These are often signs that your lifestyle is out of balance. For over 12 years, I have helped more than 22,000 people across 24+ countries reset their health, energy, and confidence through simple lifestyle changes. No crash diets. No extreme workouts. Just practical steps that naturally fit into your everyday life.",
   quote:
@@ -158,13 +164,31 @@ export const GALLERY = {
   description:
     "Transformation is never a solo journey. You get the strength of a supportive community together with one-on-one guidance that makes your journey truly yours.",
   images: [
-    { src: "/why-help-2.png", label: "Ahmedabad" },
-    { src: "/community-1.jpeg", label:  "Surat" },
-    { src: "/gallery-3.png", label: "HEALTH SURVEY IN SMALL TOWNS AND DISTRICS" },
-    { src: "/community-card-4.png", label:"Surat" },
-    { src: "/gallery-4.png", label: "HEALTH SURVEY IN SMALL TOWNS AND DISTRICS" },
-
-
+    {
+      src: "/why-help-2.png",
+      label: "Ahmedabad",
+      alt: "Amit Sarvaiya greeting attendees with a high-five at a community health event in Ahmedabad",
+    },
+    {
+      src: "/community-1.jpeg",
+      label: "Surat",
+      alt: "Amit Sarvaiya speaking with a community member at a health and wellness gathering in Surat",
+    },
+    {
+      src: "/gallery-3.png",
+      label: "HEALTH SURVEY IN SMALL TOWNS AND DISTRICS",
+      alt: "Amit Sarvaiya addressing a large audience at a community health awareness session",
+    },
+    {
+      src: "/community-card-4.png",
+      label: "Surat",
+      alt: "Amit Sarvaiya speaking with attendees at a community wellness meetup in Surat",
+    },
+    {
+      src: "/gallery-4.png",
+      label: "HEALTH SURVEY IN SMALL TOWNS AND DISTRICS",
+      alt: "Amit Sarvaiya addressing a seated audience at a community health awareness session",
+    },
   ],
   communityCount: "24+",
   communityText: "Countries where people have already joined this community",
