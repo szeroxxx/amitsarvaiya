@@ -13,6 +13,7 @@ import Community from "@/components/sections/Community";
 import Webinar from "@/components/sections/Webinar";
 import VideoTestimonials from "@/components/sections/VideoTestimonials";
 import WhyHelp from "@/components/sections/WhyHelp";
+import LatestArticles from "@/components/sections/LatestArticles";
 import Gallery from "@/components/sections/Gallery";
 import InstagramSection from "@/components/sections/InstagramSection";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -52,6 +53,7 @@ export default function Home() {
       {/* <Testimonials /> */}
       <VideoTestimonials />
       <WhyHelp />
+      <LatestArticles />
       <Gallery />
       <InstagramSection />
       <FinalCTA />

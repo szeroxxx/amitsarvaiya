@@ -6,6 +6,7 @@ export const ANNOUNCEMENT_TEXT =
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Upcoming Webinar", href: "/weight-loss-webinar" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export const HERO = {
@@ -240,6 +241,7 @@ export const FOOTER = {
   brand: "Amit Sarvaiya",
   links: [
     { label: "Home", href: "/" },
+    { label: "Blog", href: "/blog" },
     { label: "Terms and condition", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
   ],

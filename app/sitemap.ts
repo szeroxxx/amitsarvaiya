@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getCanonicalUrl } from "@/lib/seo/metadata";
-import { getAllPosts } from "@/lib/blog/source";
+import { getAllPosts, categoryToSlug } from "@/lib/blog/source";
 
 interface StaticRoute {
   path: string;
@@ -42,7 +42,7 @@ async function getDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
 
   const categories = Array.from(new Set(posts.map((post) => post.category)));
   const categoryEntries: MetadataRoute.Sitemap = categories.map((category) => ({
-    url: getCanonicalUrl(`/blog/category/${category}`),
+    url: getCanonicalUrl(`/blog/category/${categoryToSlug(category)}`),
     lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.4,

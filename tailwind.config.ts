@@ -84,6 +84,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line @typescript-eslint/no-require-imports -- Tailwind's config loader expects a synchronous plugins array; require() is the documented pattern even in .ts configs.
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;

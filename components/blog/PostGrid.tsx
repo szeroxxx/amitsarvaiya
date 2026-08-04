@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { BlogPost } from "@/lib/blog/types";
+import { BlogCard } from "./BlogCard";
 
 interface PostGridProps {
   posts: BlogPost[];
@@ -19,14 +19,7 @@ export function PostGrid({ posts, emptyMessage }: PostGridProps) {
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none">
       {posts.map((post) => (
-        <li key={post.slug} className="bg-lightBg border border-veryLightBg rounded-md p-6">
-          <Link href={`/blog/${post.slug}`} className="block group">
-            <h2 className="text-xl font-semibold text-textPrimary group-hover:text-primary transition-colors">
-              {post.title}
-            </h2>
-            <p className="text-textSecondary mt-2">{post.excerpt}</p>
-          </Link>
-        </li>
+        <BlogCard key={post.slug} post={post} headingLevel={2} />
       ))}
     </ul>
   );

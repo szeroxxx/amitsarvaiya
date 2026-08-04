@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata, getCanonicalUrl } from "@/lib/seo/metadata";
-import { getAllCategories, getPostsByCategory } from "@/lib/blog/source";
+import { getAllCategorySlugs, getPostsByCategorySlug } from "@/lib/blog/source";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getWebPageSchema } from "@/lib/schema/webpage";
 import { getBreadcrumbSchema } from "@/lib/schema/breadcrumb";
@@ -13,23 +13,24 @@ interface CategoryPageProps {
   params: Promise<{ category: string }>;
 }
 
-function getPageCopy(category: string) {
+function getPageCopy(categorySlug: string, displayName: string) {
   return {
-    path: `/blog/category/${category}`,
-    title: `${category} Articles`,
-    description: `Articles filed under ${category} from Amit Sarvaiya's health and wellness blog.`,
+    path: `/blog/category/${categorySlug}`,
+    title: `${displayName} Articles`,
+    description: `Articles filed under ${displayName} from Amit Sarvaiya's health and wellness blog.`,
   };
 }
 
 export async function generateStaticParams() {
-  const categories = await getAllCategories();
-  return categories.map((category) => ({ category }));
+  const categorySlugs = await getAllCategorySlugs();
+  return categorySlugs.map((category) => ({ category }));
 }
 
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
-  const { category } = await params;
-  const posts = await getPostsByCategory(category);
-  const { path, title, description } = getPageCopy(category);
+  const { category: categorySlug } = await params;
+  const posts = await getPostsByCategorySlug(categorySlug);
+  const displayName = posts[0]?.category ?? categorySlug;
+  const { path, title, description } = getPageCopy(categorySlug, displayName);
 
   return buildMetadata({
     title,
@@ -40,14 +41,15 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 }
 
 export default async function BlogCategoryPage({ params }: CategoryPageProps) {
-  const { category } = await params;
-  const posts = await getPostsByCategory(category);
+  const { category: categorySlug } = await params;
+  const posts = await getPostsByCategorySlug(categorySlug);
 
   if (posts.length === 0) {
     notFound();
   }
 
-  const { path, title, description } = getPageCopy(category);
+  const displayName = posts[0].category;
+  const { path, title, description } = getPageCopy(categorySlug, displayName);
   const canonicalUrl = getCanonicalUrl(path);
 
   const schemaGraph = [
@@ -55,7 +57,7 @@ export default async function BlogCategoryPage({ params }: CategoryPageProps) {
     getBreadcrumbSchema([
       { name: "Home", path: "/" },
       { name: "Blog", path: "/blog" },
-      { name: category, path },
+      { name: displayName, path },
     ]),
   ];
 

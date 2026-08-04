@@ -7,6 +7,16 @@ export interface BlogAuthor {
   image?: string;
 }
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface ExternalReference {
+  label: string;
+  url: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -26,9 +36,10 @@ export interface BlogPost {
   updatedAt?: string;
   /** Excluded from getAllPosts()/sitemap/index when true. */
   draft?: boolean;
-  /**
-   * Raw body content. Plain string today; swap for MDX/rich content once a
-   * real content source is wired in (see lib/blog/source.ts).
-   */
+  /** Raw Markdown body, parsed from the content/blog/*.mdx frontmatter-delimited file (see lib/blog/source.ts and lib/blog/render.ts). */
   content: string;
+  /** Structured Q&A, rendered on-page and eligible for FAQPage schema. */
+  faqs: FaqItem[];
+  /** Authoritative third-party sources cited in the article (E-E-A-T). */
+  externalReferences?: ExternalReference[];
 }
