@@ -111,7 +111,7 @@ export default function Gallery() {
                   className="object-cover"
                   quality={100}
                 />
-                <div className="absolute flex items-center gap-1 px-3 bg-primary left-0 bottom-0 h-9 backdrop-blur-sm">
+                <div className="absolute flex items-center gap-1 px-3 bg-primary left-0 bottom-0 h-9 backdrop-blur-sm rounded-lg">
                   <p className="text-white font-ibm text-[10px] sm:text-xs uppercase">{image.label}</p>
                 </div>
               </div>
